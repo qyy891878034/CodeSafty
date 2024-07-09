@@ -1,0 +1,33 @@
+由于某些场景下用于加密的密钥存在java代码中，使用jd-gui打开jar包能清楚的看到整个源代码和密钥，那么这时候加密就不再安全
+基于这种场景，可使用xjar进行加密，他使用Go进行加密，运行时才进行解密，降低了拿到jar包直接查看源码的风险
+并且xjar对代码没有侵入，使用也比较方便；记录下使用步骤
+1.在<build><plugins>中增加如下plugin
+            <plugin>
+                <groupId>com.github.core-lib</groupId>
+                <artifactId>xjar-maven-plugin</artifactId>
+                <version>4.0.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+    /****增加jitpack仓库 ***/
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </pluginRepository>
+    </pluginRepositories>
+2.使用maven打包，命令clean install -DskipTests -Dxjar.password=你的密码
+3.在服务器安装Go环境，yum install golang
+4.将第3步打包出来的xjar.go文件放进服务器，在服务器进入xjar.go所在的目录，输入命令go build xjar.go，就会在同目录下生成一个xjar文件，举例为/mnt/xjar
+5.再将第3步打包出来的XXX.xjar文件放入服务器，在nohup 启动命令加入/mnt/xjar即可，当然启动的也是XXX.xjar文件，xjar.go和XXX.xjar必须时一起打包出来的，不然校验不通过，无法运行
+原启动命令nohup java -jar /mnt/test.jar --server.port=$port1 $params $otherParams $websocketProt1Str &
+修改成为nohup /mnt/xjar java -jar /mnt/test.xjar --server.port=$port1 $params $otherParams $websocketProt1Str &
