@@ -7,3 +7,55 @@ MMM合约-0xd7381b118645551Fb54cb55AFBB5107dF4B1e526
 地址管理中心-0xb6516389F397645f2286E16449AED97a76e2A58c
 数据库-0x5fd237a457cd81a767f7e325a83806f7601d3b4d
 资金池-0x26A11F21B41654C51E2bF61da56E45239F154F61
+
+
+1.calculateGeneiusProfit(address user) - 地址可领取创世收益
+2.calculatePartenerProfit(address user) - 地址可领取的合伙人收益
+3.calculateSuperNodeProfit(address user) - 地址可领取的超级节点收益
+4.getDispatchProfitNetList(uint256 type, uint256 pageNum, uint256 pageSize) - 全网的分红收益记录(type=1为超级节点，2为合伙人，3为创世)
+----address account;地址
+----uint256 amount;数量
+----uint256 time;时间
+5.getDispatchProfitSingleList(uint256 type, uint256 pageNum, uint256 pageSize) - 个人的分红收益记录(type=1为超级节点，2为合伙人，3为创世)
+----address account;地址(无需展示)
+----uint256 amount;数量
+----uint256 time;时间
+6.getDispatchProfitTotalNet() - 全网已领取的分红收益总量
+7.getDispatchProfitTotalSingle() - 个人已领取的分红收益总量
+8.getDynamicProfitList(uint256 pageNum, uint256 pageSize) - 个人的动态收益记录
+----address provider;贡献者地址
+----uint256 style;类型【1直推，2间推】
+----uint256 amount;数量
+----uint256 time;时间
+9.getIsRegister() - 地址是否注册/绑定上级
+10.getPackageOrderData(uint256 orderId) - 个人某套餐的信息。orderId为getUserOrderPackagePage返回的数据的id字段
+----已领取收益
+----可领取收益
+----下次可领时间点(秒)
+11.getResourcePackageList() - 系统套餐列表 ()
+----uint256 resourceId 套餐ID
+----uint256 validTime 套餐可购买时间点(系统时间在此之后才能购买)
+----uint256 price 购买价格
+----uint256 rate 收益比例（万分之）
+----uint256 maxCount 可领取次数
+12.getSonList(uint256 pageNum, uint256 pageSize) - 直推列表
+----address account 地址
+----uint256 performance 购买金额
+----uint256 time 时间
+13.getStaticProfitList1(uint256 _orderId) - 个人某套餐的领取记录
+----uint256 count;第几次领取
+----uint256 amount;领取数量
+----uint256 time;领取时间
+14.getStaticProfitList2(uint256 pageNum, uint256 pageSize) - 个人所有的静态收益记录
+----uint256 count;第几次领取（无需展示）
+----uint256 amount;领取数量
+----uint256 time;领取时间
+15.getUserOrderPackageByPage(uint256 pageNum, uint256 pageSize) - 个人购买的套餐记录
+----uint256 resourceId;套餐ID
+----uint256 id;套餐的订单id
+----uint256 price;购买价格
+----uint256 purchaseTime;购买时间
+----uint256 lastTakeTime;上次领取时间
+----uint256 takeCount;已领取次数
+----uint256 takeAmount;已领取数量
+----bool valid;是否生效中
