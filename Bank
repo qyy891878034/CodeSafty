@@ -8,7 +8,7 @@ MMM合约-0xd7381b118645551Fb54cb55AFBB5107dF4B1e526
 数据库-0x5fd237a457cd81a767f7e325a83806f7601d3b4d
 资金池-0x26A11F21B41654C51E2bF61da56E45239F154F61
 
-
+***************************************读函数*****************************************
 1.calculateGeneiusProfit(address user) - 地址可领取创世收益
 2.calculatePartenerProfit(address user) - 地址可领取的合伙人收益
 3.calculateSuperNodeProfit(address user) - 地址可领取的超级节点收益
@@ -59,3 +59,15 @@ MMM合约-0xd7381b118645551Fb54cb55AFBB5107dF4B1e526
 ----uint256 takeCount;已领取次数
 ----uint256 takeAmount;已领取数量
 ----bool valid;是否生效中
+
+
+
+***************************************写函数*****************************************
+1.bindParent(address parent) - 绑定上级地址
+2.buyNode() - 购买超级节点(由于要扣地址上的U，所以需要授权)
+3.buyPackage(uint256 id) - 购买套餐(id为套餐id，即写函数11中返回值的resourceId字段)
+4.takeGeneiusProfit() - 领取创世收益
+5.takePartenerProfit() - 领取合伙人收益
+6.takeSuperNodeProfit() - 领取超级节点收益
+7.takeOrderProfit(uint256 id) - 领取个人的某套餐的收益(id为个人套餐订单号，即写函数15中返回值的id字段)
+8.upgradeOrder(uint256 id, uint256 resourceId) - 升级套餐(id为个人套餐订单号；resourceId为套餐id，即写函数11中返回值的resourceId字段)
