@@ -71,7 +71,8 @@ MMM合约-0xd7381b118645551Fb54cb55AFBB5107dF4B1e526
 1.bindParent(address parent) - 绑定上级地址
 2.buyNode() - 购买超级节点(由于要扣地址上的U，所以需要授权)
 3.buyPackage(uint256 id) - 购买套餐(id为套餐id，即写函数11中返回值的resourceId字段)
-4.takeGeneiusProfit() - 领取创世收益
+4.takeGeneiusProfit1() - 领取创世收益1
+5.takeGeneiusProfit2() - 领取创世收益2
 5.takePartenerProfit() - 领取合伙人收益
 6.takeSuperNodeProfit() - 领取超级节点收益
 7.takeOrderProfit(uint256 id) - 领取个人的某套餐的收益(id为个人套餐订单号，即写函数15中返回值的id字段)
