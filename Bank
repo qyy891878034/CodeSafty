@@ -1,5 +1,5 @@
 -------------------------BSC测试链---------------------
-逻辑合约-0x9ceEE337bdA90645E532a4cd1c2f6F7e8FA53d11
+逻辑合约-0xF1aeE0C6E7C007F0074b0A1FA7992c083aFEFB45
 USDT合约-0x0536e7E62cbE7B22Ea7bE174Ce0aE52841d54f86
 MMM合约-0xd7381b118645551Fb54cb55AFBB5107dF4B1e526
 
@@ -64,6 +64,7 @@ MMM合约-0xd7381b118645551Fb54cb55AFBB5107dF4B1e526
 ----uint256 rate;收益率（万分之）
 ----uint256 takeAmount;已领取数量
 ----bool valid;是否生效中
+16.getIsSuperNode() - 查询是否为超级节点
 
 
 
