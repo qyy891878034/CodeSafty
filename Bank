@@ -8,6 +8,12 @@ MMM合约-0x6a55A1B1d9c5B6C599965c845F09bAf537D646F7
 数据库-0x2dc70BFF16265Fd2AFdB4DDB4c6AE25d2f04dD12
 资金池-0x6F3e9ADEc09FE522C548a7dDa968a318507aC866
 
+
+-------------------------BSC正式链---------------------
+逻辑合约-0x903CEE46F844085d102C29B4f476BF4a019e3446
+USDT合约-0x55d398326f99059fF775485246999027B3197955
+MMM合约-0x802C7eFe4D28CD6D11E88b4dA27637bEc12Cf149
+
 ***************************************读函数*****************************************
 1.calculateGeneiusProfit1(address user) - 地址可领取创世收益1
 2.calculateGeneiusProfit2(address user) - 地址可领取创世收益2
