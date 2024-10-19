@@ -19,7 +19,7 @@ BTC币合约 - 0xeA4Ea051Ac178DfbC2b553f01966FFe098705cD0
 
 去掉USDT和BTRE的充值，没有充值了
 
-购买套餐+兑换积分逻辑合约 - 0x49368bF44EC37aaFD851033961fbA8F39528e107
+购买套餐+兑换积分逻辑合约 - 0xcFCd9c3623466a17d3A7EC982FEBE6C0CcD78174
 
 A.购买套餐由调接口改为调合约
 function buyPackage(uint256 _packageId, uint256 _payType, uint256 _price)；
