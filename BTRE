@@ -22,7 +22,7 @@ _packageId - 套餐id
 _payType - [1=USDT+积分，2=USDT+BTRE币,3纯USDT]
 _price - 套餐价格
 
-购买套餐时_payType参数  前端按照以下优先级判定：（假定买100U的套餐）【以下公式中的系数(0.05、0.1)是固定的】
+购买套餐时_payType参数  前端按照以下优先级判定：（假定买100U的套餐）【以下公式中的系数(0.05、1.1)是固定的】
 1.判定地址的积分(接口取)够不够，计算方式：需要积分数量coinAmount=100U*0.05/BTRE币价格(通过swap取)，如果地址的积分数量>=coinAmount并且地址的USDT数量>=100U，此时_payType传1
 2.判定地址的BTRE(链上取)够不够，计算方式：需要BTRE数量btreAmount=100U*0.05/BTRE币价格(通过swap取)，如果地址的BTRE数量>=btreAmount并且地址的USDT数量>=100U，此时_payType传2
 3.判定地址的USDT(链上取)够不够，计算方式：需要USDT数量usdtAmount=100U*1.1=110U，如果地址的USDT数量>=usdtAmount,此时_payType传3
