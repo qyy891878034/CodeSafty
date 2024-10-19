@@ -1,9 +1,5 @@
 蓝湖链接-https://lanhuapp.com/link/#/invite?sid=lx0T7yWG
 
-BTRE币合约 - 0x7DecFf351d4fe295216051Effd18b43149321195
-USDT币合约 - 0xf552C531A12B870F03A8E3Fd9c1fd55A83F61A59
-BTC币合约 - 0xeA4Ea051Ac178DfbC2b553f01966FFe098705cD0
-
 API文档 - http://192.168.110.189:5555/swagger-ui.html
 系统初始顶号 - 0x0000000000000000000000000000000000000000
 
@@ -11,6 +7,15 @@ API文档 - http://192.168.110.189:5555/swagger-ui.html
 
 
 
+
+
+
+
+
+
+BTRE币合约 - 0x7DecFf351d4fe295216051Effd18b43149321195
+USDT币合约 - 0xf552C531A12B870F03A8E3Fd9c1fd55A83F61A59
+BTC币合约 - 0xeA4Ea051Ac178DfbC2b553f01966FFe098705cD0
 
 去掉USDT和BTRE的充值，没有充值了
 
@@ -32,3 +37,14 @@ _price - 套餐价格
 B.积分兑换由调接口改为调合约
 function exchangeCoin(uint256 _btreAmount)
 _btreAmount - 支付的BTRE数量
+
+
+
+博饼BTRE价格获取
+
+测试ROUTER合约 - 0xD99D1c33F9fC3444f8101754aBC46c52416550D1
+
+调用ROUTER合约的function getAmountsOut(uint amountIn, address[] calldata path) external view returns (uint[] memory amounts);方法
+amountIn - 1个BTRE数量(带精度)
+path - 路径[0x7DecFf351d4fe295216051Effd18b43149321195,0xf552C531A12B870F03A8E3Fd9c1fd55A83F61A59]
+返回的uint[] amounts数组，uint[1]就是一个BTRE换得的USDT数量(带精度)
