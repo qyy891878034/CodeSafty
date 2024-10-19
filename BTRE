@@ -1,9 +1,34 @@
 蓝湖链接-https://lanhuapp.com/link/#/invite?sid=lx0T7yWG
 
-测试充值合约 - 0xBC4cb023E81D61267072b8914311A32E3212933e
-BTRE币合约 - 0x0536e7E62cbE7B22Ea7bE174Ce0aE52841d54f86
-USDT币合约 - 0xC2989dBfefdEba914D759a5C40af6b7C2C4cA0d0
-BTC币合约 - 0x893791Aea6aFCAa153d49FF344b070Ac5664Eed2
+BTRE币合约 - 0x7DecFf351d4fe295216051Effd18b43149321195
+USDT币合约 - 0xf552C531A12B870F03A8E3Fd9c1fd55A83F61A59
+BTC币合约 - 0xeA4Ea051Ac178DfbC2b553f01966FFe098705cD0
 
 API文档 - http://192.168.110.189:5555/swagger-ui.html
 系统初始顶号 - 0x0000000000000000000000000000000000000000
+
+
+
+
+
+
+去掉USDT和BTRE的充值，没有充值了
+
+购买套餐+兑换积分逻辑合约 - 0x49368bF44EC37aaFD851033961fbA8F39528e107
+
+A.购买套餐由调接口改为调合约
+function buyPackage(uint256 _packageId, uint256 _payType, uint256 _price)；
+_packageId - 套餐id
+_payType - [1=USDT+积分，2=USDT+BTRE币,3纯USDT]
+_price - 套餐价格
+
+购买套餐时_payType参数  前端按照以下优先级判定：（假定买100U的套餐）【以下公式中的系数(0.05、0.1)是固定的】
+1.判定地址的积分(接口取)够不够，计算方式：需要积分数量coinAmount=100U*0.05/BTRE币价格(通过swap取)，如果地址的积分数量>=coinAmount并且地址的USDT数量>=100U，此时_payType传1
+2.判定地址的BTRE(链上取)够不够，计算方式：需要BTRE数量btreAmount=100U*0.05/BTRE币价格(通过swap取)，如果地址的BTRE数量>=btreAmount并且地址的USDT数量>=100U，此时_payType传2
+3.判定地址的USDT(链上取)够不够，计算方式：需要USDT数量usdtAmount=100U*1.1=110U，如果地址的USDT数量>=usdtAmount,此时_payType传3
+以上都不满足提示资产不足，无法购买
+
+
+B.积分兑换由调接口改为调合约
+function exchangeCoin(uint256 _btreAmount)
+_btreAmount - 支付的BTRE数量
