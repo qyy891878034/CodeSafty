@@ -1,0 +1,10 @@
+银行那个在首页加
+
+购买套餐分红合约 - 0x256F7051500dd0FAd4813bF3bEa5B5967b68D502
+1.getWaitTakeReward(); 可领取数量(带精度的，18位)
+2.takeReward();领取收益
+
+
+持币分红合约 - 0xb8064D21aFcE9954fb9b1E69EAb5802320A42De9
+1.getWaitTakeReward(); 可领取数量(带精度的，18位)
+2.takeReward();领取收益
