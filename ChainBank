@@ -1,5 +1,5 @@
 加一个交易分红在后面
-交易分红合约 - 0xaB264cE64b2458A5C7aBd8FF04D4C6dc45643631
+交易分红合约 - 0x23355a71753C3fd2bA207BA3aae960F6183DAd06
 1.getWaitTakeReward(); 可领取数量(带精度的，18位)，也是SKC
 2.takeReward();领取收益
 
