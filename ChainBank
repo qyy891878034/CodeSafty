@@ -30,5 +30,6 @@
 交互合约 - 0x20388EBaEeac3a83137B0Db6E7dbF63c725583bc
 
 首页加个功能，
-1.getUserWaitTakeProfit(address user) - 获取待领取收益() 返回两个数据，第一个是待领取收益，第二个是质押的数量
-2.takeProfit() - 领取收益
+1.getUserWaitTakeProfit(address user) - 获取待领取收益() 返回两个数据，第一个是待领取收益MMM，第二个是质押的数量MMM
+2.takeProfit() - 领取收益MMM
+3.stake(uint256 _stakeAmount) - 质押MMM
